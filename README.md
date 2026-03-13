@@ -1,96 +1,79 @@
-# Synchronous FIFO – PYNQ-ZU (Zynq UltraScale+ MPSoC)
+# Synchronous FIFO Implementation in Verilog (PYNQ-ZU)
 
 ## Overview
-This project implements a **Synchronous FIFO (First-In First-Out)** using **Verilog RTL**.
+This repository contains a **Synchronous FIFO (First-In First-Out)** implementation written in **Verilog RTL** and targeted for the **PYNQ-ZU board** based on the **Zynq UltraScale+ MPSoC (xczu5eg-sfvc784-1-e)**.
 
-The design is targeted for the **PYNQ-ZU board** based on the **Zynq UltraScale+ MPSoC (xczu5eg-sfvc784-1-e)**.
+The FIFO operates in a **single clock domain** and supports standard **read and write operations** with **full and empty flag generation**.
 
-The FIFO operates in a **single clock domain** and supports standard **read and write operations** with **full and empty status flag generation**.
+The design has been verified through simulation and synthesized successfully using **Vivado Design Suite**.
 
 ---
 
-## Project Summary
+## Features
+- Single-clock synchronous FIFO
+- Parameterized data width and FIFO depth
+- Full and Empty flag generation
+- Circular buffer using read and write pointers
+- Synthesizable Verilog RTL
+- Simulation-based functional verification
 
-The image below shows the **Vivado project summary** for the synchronous FIFO design.
+---
+
+## Design Details
+- FIFO memory implemented using a register array
+- Read and write operations controlled using pointer logic
+- Write pointer increments on valid write operation
+- Read pointer increments on valid read operation
+- Full and empty conditions detected using pointer comparison
+
+---
+
+## Verification
+
+### Simulation
+- Functional verification performed using a Verilog testbench
+- Multiple write and read operations applied
+- FIFO full and empty conditions verified
+- Correct data order maintained during read operations
+
+---
+
+## Waveforms & Results
+
+### Simulation Waveform
+The waveform below verifies correct FIFO behavior including write,
+read, full, and empty conditions.
+
+![Simulation Waveform](docs/simulation_waveform.png)
+
+### Vivado Project Summary
+The project summary below shows successful synthesis and implementation
+of the FIFO design in Vivado.
 
 ![Project Summary](docs/project_summary.png)
 
 ---
 
-## Simulation Waveform
-
-The waveform below verifies correct FIFO operation including **write, read, full, and empty conditions**.
-
-//![Simulation Waveform](docs/simulation_waveform.png)
-![Project Summary](https://raw.githubusercontent.com/YOUR_USERNAME/sync_fifo/main/docs/project_summary.png)
-
-
----
-
-## Features
-
-- Single clock **Synchronous FIFO**
-- **Parameterized data width and depth**
-- **Full and Empty flag generation**
-- Circular buffer using **read and write pointers**
-- **Synthesizable Verilog RTL**
-- Verified using a **simulation testbench**
-
----
-
 ## Target Platform
-
-- **Board:** PYNQ-ZU  
-- **SoC:** Zynq UltraScale+ MPSoC  
-- **Part:** xczu5eg-sfvc784-1-e  
+- **Board:** PYNQ-ZU
+- **SoC:** Zynq UltraScale+ MPSoC
+- **Part:** xczu5eg-sfvc784-1-e
 - **Tool:** Vivado Design Suite
 
 ---
 
-## Directory Structure
+## Project Structure
 
-```
+```text
 sync_fifo/
-│
-├── constraints/
-│   └── sync_fifo.xdc
-│
-├── docs/
-│   ├── project_summary.png
-│   └── simulation_waveform.png
-│
 ├── srcs/
 │   └── sync_fifo.v
-│
+├── constraints/
+│   └── sync_fifo.xdc
 ├── tb/
 │   └── tb_sync_fifo.v
-│
+├── docs/
+│   ├── simulation_waveform.png
+│   └── project_summary.png
 ├── sync_fifo.xpr
-│
 └── README.md
-```
-
----
-
-## Design Description
-
-The synchronous FIFO is implemented using a **circular buffer architecture**.
-
-Two pointers manage FIFO operation:
-
-- **Write Pointer** – Points to the next location where data will be written.
-- **Read Pointer** – Points to the next location from which data will be read.
-
-The design generates **status flags** to indicate FIFO conditions:
-
-- **FIFO Full** – Prevents additional write operations when the FIFO is full.
-- **FIFO Empty** – Indicates that no data is available for reading.
-
----
-
-## Tools Used
-
-- **Vivado Design Suite**
-- **Verilog HDL**
-- **Simulation Testbench**
-
