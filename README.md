@@ -41,23 +41,21 @@ The design has been verified through simulation and synthesized successfully usi
 ## Waveforms & Results
 
 ### Simulation Waveform
-The waveform below verifies correct FIFO behavior including write,
-read, full, and empty conditions.
+The waveform below verifies correct FIFO behavior including write, read, full, and empty conditions.
 
-![Simulation Waveform](docs/simulation_waveform.png)
+![Simulation Waveform](simulation_waveform.png)
 
 ### Vivado Project Summary
-The project summary below shows successful synthesis and implementation
-of the FIFO design in Vivado.
+The project summary below shows successful synthesis and implementation of the FIFO design in Vivado.
 
-![Project Summary](docs/project_summary.png)
+![Project Summary](project_summary.png)
 
 ---
 
 ## Target Platform
-- **Board:** PYNQ-ZU
-- **SoC:** Zynq UltraScale+ MPSoC
-- **Part:** xczu5eg-sfvc784-1-e
+- **Board:** PYNQ-ZU  
+- **SoC:** Zynq UltraScale+ MPSoC  
+- **Part:** xczu5eg-sfvc784-1-e  
 - **Tool:** Vivado Design Suite
 
 ---
@@ -72,8 +70,16 @@ sync_fifo/
 │   └── sync_fifo.xdc
 ├── tb/
 │   └── tb_sync_fifo.v
-├── docs/
-│   ├── simulation_waveform.png
-│   └── project_summary.png
+├── project_summary.png
+├── simulation_waveform.png
 ├── sync_fifo.xpr
 └── README.md
+```
+
+---
+
+## Author
+
+Navneet Kumar Tiwari  
+B.Tech – Electronics Engineering  
+Interested in FPGA, Digital Design and RTL Development
