@@ -21,7 +21,9 @@ The image below shows the **Vivado project summary** for the synchronous FIFO de
 
 The waveform below verifies correct FIFO operation including **write, read, full, and empty conditions**.
 
-![Simulation Waveform](docs/simulation_waveform.png)
+//![Simulation Waveform](docs/simulation_waveform.png)
+![Project Summary](https://raw.githubusercontent.com/YOUR_USERNAME/sync_fifo/main/docs/project_summary.png)
+
 
 ---
 
