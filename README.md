@@ -10,53 +10,59 @@ The design has been verified through simulation and synthesized successfully usi
 ---
 
 ## Features
-- Single-clock synchronous FIFO
-- Parameterized data width and FIFO depth
-- Full and Empty flag generation
-- Circular buffer using read and write pointers
-- Synthesizable Verilog RTL
-- Simulation-based functional verification
+
+- Single-clock synchronous FIFO  
+- Parameterized data width and FIFO depth  
+- Full and Empty flag generation  
+- Circular buffer using read and write pointers  
+- Synthesizable Verilog RTL  
+- Simulation-based functional verification  
 
 ---
 
 ## Design Details
-- FIFO memory implemented using a register array
-- Read and write operations controlled using pointer logic
-- Write pointer increments on valid write operation
-- Read pointer increments on valid read operation
-- Full and empty conditions detected using pointer comparison
+
+- FIFO memory implemented using a register array  
+- Read and write operations controlled using pointer logic  
+- Write pointer increments on valid write operation  
+- Read pointer increments on valid read operation  
+- Full and empty conditions detected using pointer comparison  
 
 ---
 
 ## Verification
 
 ### Simulation
-- Functional verification performed using a Verilog testbench
-- Multiple write and read operations applied
-- FIFO full and empty conditions verified
-- Correct data order maintained during read operations
+
+- Functional verification performed using a Verilog testbench  
+- Multiple write and read operations applied  
+- FIFO full and empty conditions verified  
+- Correct data order maintained during read operations  
 
 ---
 
 ## Waveforms & Results
 
 ### Simulation Waveform
-The waveform below verifies correct FIFO behavior including write, read, full, and empty conditions.
+
+The waveform below verifies correct FIFO behavior including **write, read, full, and empty conditions**.
 
 ![Simulation Waveform](simulation_waveform.png)
 
 ### Vivado Project Summary
-The project summary below shows successful synthesis and implementation of the FIFO design in Vivado.
+
+The project summary below shows successful **synthesis and implementation** of the FIFO design in Vivado.
 
 ![Project Summary](project_summary.png)
 
 ---
 
 ## Target Platform
+
 - **Board:** PYNQ-ZU  
 - **SoC:** Zynq UltraScale+ MPSoC  
 - **Part:** xczu5eg-sfvc784-1-e  
-- **Tool:** Vivado Design Suite
+- **Tool:** Vivado Design Suite  
 
 ---
 
@@ -78,8 +84,3 @@ sync_fifo/
 
 ---
 
-## Author
-
-Navneet Kumar Tiwari  
-B.Tech – Electronics Engineering  
-Interested in FPGA, Digital Design and RTL Development
